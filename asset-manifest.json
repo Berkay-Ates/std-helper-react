@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/std-helper-react/static/js/main.fbf379cd.js",
+    "main.js": "/std-helper-react/static/js/main.d1ca253e.js",
     "index.html": "/std-helper-react/index.html",
-    "main.fbf379cd.js.map": "/std-helper-react/static/js/main.fbf379cd.js.map"
+    "main.d1ca253e.js.map": "/std-helper-react/static/js/main.d1ca253e.js.map"
   },
   "entrypoints": [
-    "static/js/main.fbf379cd.js"
+    "static/js/main.d1ca253e.js"
   ]
 }
