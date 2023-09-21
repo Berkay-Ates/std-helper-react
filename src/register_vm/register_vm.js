@@ -31,7 +31,7 @@ export default class RegisterViewModel{
        }
         if (result.status === 201) {
             alert('Size gelen emailden hesabinizi dogrulamaniz gerekmektedir. Sonrasinda tekrar giris yapabilirsiniz')
-            navigation('/')
+            navigation('/std-helper-react/')
         }
         event.preventDefault()
     }

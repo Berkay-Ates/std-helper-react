@@ -31,12 +31,12 @@ export default class LoginViewModel{
             // HomeVm.setUser(res.data['users']['mail'], res.data['users']['meal_notify'])
             homeVm.setUser(res.data['users']['mail'], res.data['users']['meal_notify'], res.data['users']['std_id'])
             await homeVm.getLessons()
-            navigate('/home')
+            navigate('/std-helper-react/home')
         }
         event.preventDefault()
     }
 
     navigateRegister = (event, navigate) => {
-        navigate('/register')
+        navigate('/std-helper-react/register')
     }
 }
