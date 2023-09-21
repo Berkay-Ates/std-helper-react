@@ -53,8 +53,7 @@ export default class HomeViewModel {
 
     createLesson = async (event) => {
         let result = ''
-        try {
-            
+        try { 
             const result = await axios.post(this.baseUrl + 'createlesson/', {
                 "user":this.user_id,
                 "lessons_name" : this.lesson_name,
@@ -63,7 +62,6 @@ export default class HomeViewModel {
                 "end_date": this.end_date
             })
         }catch(e){}
-
         if (result.status === 201) {
             this.lesson_name = ''
             this.class_room = ''
@@ -72,7 +70,7 @@ export default class HomeViewModel {
             await this.getLessons()
         }
     }
-
+    
     changeMealNotify = async (value) => {
         let res = ''
         try { 
@@ -91,7 +89,7 @@ export default class HomeViewModel {
     deleteLesson = async (event, value) => {
         let res = ''
         try {
-            res = await axios.delete(this.baseUrl + 'deletelesson/' + value + '/')
+            res = await axios.delete(this.baseUrl + 'deletelesson/' + value )
         }catch(e){}
         
         if (res.status === 204) {
