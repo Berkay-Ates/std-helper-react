@@ -14,7 +14,7 @@ const Register = observer((props)=> {
            <Input onChange={props.viewModel.setName} value ={props.viewModel.name} type='text' placeholder='isim'/>
            <Input onChange={props.viewModel.setSurname} value ={props.viewModel.surname} type='text' placeholder='soyisim'/>
            <Button onClick={props.viewModel.registerUser} name='kayit ol'/>
-           </form>
+        </form>
         </div>
     );
 })

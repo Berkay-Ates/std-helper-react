@@ -16,9 +16,9 @@ function App() {
     return (
         <BrowserRouter> 
             <Routes>
-                <Route  path="/" element={<Login viewModel={loginVm} />}/>
-                <Route  path="/register" element={<Register viewModel={registerVm} />}/>
-                <Route  path="/home" element={<Home viewModel={homeVm} />}/>
+                <Route  path="/std-helper-react/" element={<Login viewModel={loginVm} />}/>
+                <Route  path="/std-helper-react/register" element={<Register viewModel={registerVm} />}/>
+                <Route  path="/std-helper-react//home" element={<Home viewModel={homeVm} />}/>
             </Routes>
         </BrowserRouter>
     );
