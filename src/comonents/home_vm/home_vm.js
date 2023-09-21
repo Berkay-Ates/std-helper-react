@@ -44,8 +44,9 @@ export default class HomeViewModel {
         let res = ''
         try {
             res = await axios.get(this.baseUrl + 'userlessons/' + this.user_id + '/')
-        } catch (error) {}
-         
+        } catch (error) {
+            this.setLessons(res.data['lessons'])
+        }
         if (res.status === 200) {
             this.setLessons(res.data['lessons'])
         }   
@@ -67,6 +68,11 @@ export default class HomeViewModel {
             })
         } catch (e) {
             console.log(e)
+            this.setLessonName("")
+            this.setClassRoom('')
+            this.setLessonHour("")
+            this.setEndDate("")
+            await this.getLessons()
         }
             this.setLessonName("")
             this.setClassRoom('')
@@ -96,6 +102,7 @@ export default class HomeViewModel {
         } catch (e) {
             console.log(this.baseUrl + 'deletelesson/' + value + '/')
             console.log(e)
+            await this.getLessons()
         }
         
         if (res.status === 204) {
