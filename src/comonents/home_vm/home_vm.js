@@ -47,8 +47,12 @@ export default class HomeViewModel {
         } catch (error) {}
          
         if (res.status === 200) {
-            this.lessons = res.data['lessons']
+            this.setLessons(res.data['lessons'])
         }   
+    }
+    
+    setLessons = (value) => {
+        this.lessons = value
     }
 
     createLesson = async (event) => {
@@ -63,10 +67,10 @@ export default class HomeViewModel {
             })
         }catch(e){}
         if (result.status === 201) {
-            this.lesson_name = ''
-            this.class_room = ''
-            this.lesson_hour = ''
-            this.end_date = ''
+            this.setLessonName("")
+            this.setClassRoom('')
+            this.setLessonHour("")
+            this.setEndDate("")
             await this.getLessons()
         }
     }
@@ -74,7 +78,6 @@ export default class HomeViewModel {
     changeMealNotify = async (value) => {
         let res = ''
         try { 
-            
             res = await axios.post(this.baseUrl + 'setmealnotify/', {
                 "mail":this.email,
                 "meal_notify":value
