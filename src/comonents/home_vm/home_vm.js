@@ -28,10 +28,10 @@ export default class HomeViewModel {
     lesson_hour = ''
     end_date = ''
 
-    setLessonName=(value)=>this.lesson_name=value
-    setClassRoom=(value)=>this.class_room=value
-    setLessonHour=(value)=>this.lesson_hour=value
-    setEndDate=(value)=>this.end_date=value
+    setLessonName=(value)=>{this.lesson_name=value}
+    setClassRoom=(value)=>{this.class_room=value}
+    setLessonHour=(value)=>{this.lesson_hour=value}
+    setEndDate=(value)=>{this.end_date=value}
     
 
     setUser = (email, meal_notify,user_id) => {
@@ -92,8 +92,11 @@ export default class HomeViewModel {
     deleteLesson = async (event, value) => {
         let res = ''
         try {
-            res = await axios.delete(this.baseUrl + 'deletelesson/' + value )
-        }catch(e){}
+            res = await axios.delete(this.baseUrl + 'deletelesson/' + value +'/')
+        } catch (e) {
+            console.log(this.baseUrl + 'deletelesson/' + value + '/')
+            console.log(e)
+        }
         
         if (res.status === 204) {
             await this.getLessons()
