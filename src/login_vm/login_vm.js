@@ -22,6 +22,8 @@ export default class LoginViewModel{
             res = await axios.post(this.baseUrl + 'loginuser/', { "mail": this.email })
         } catch (e) {
             alert('girdiginiz e postaya ait kayit oldugundan emin olunuz')
+            console.log(this.baseUrl + 'loginuser/')
+            console.log(e)
         }
         
         if (res.status === 201) {
