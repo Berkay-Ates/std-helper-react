@@ -68,13 +68,11 @@ export default class HomeViewModel {
         } catch (e) {
             console.log(e)
         }
-        if (result.status === 201) {
             this.setLessonName("")
             this.setClassRoom('')
             this.setLessonHour("")
             this.setEndDate("")
             await this.getLessons()
-        }
     }
     
     changeMealNotify = async (value) => {
