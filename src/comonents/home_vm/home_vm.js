@@ -65,7 +65,9 @@ export default class HomeViewModel {
                 "lesson_hour": this.lesson_hour,
                 "end_date": this.end_date
             })
-        }catch(e){}
+        } catch (e) {
+            console.log(e)
+        }
         if (result.status === 201) {
             this.setLessonName("")
             this.setClassRoom('')
