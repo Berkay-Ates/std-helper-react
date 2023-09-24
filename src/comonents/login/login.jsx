@@ -13,6 +13,7 @@ const Login = observer((props) => {
             <Input onChange={props.viewModel.setEmail}  value={props.viewModel.email} type='email' placeholder='email'/>
             <Button onClick={props.viewModel.login} name='Giris yap'/>
             <Button onClick={props.viewModel.navigateRegister} name='kayit ol' />
+            <Button onClick={props.viewModel.checkPendingMails} name='check pending mails' />    
             </form >
         </div>
     )

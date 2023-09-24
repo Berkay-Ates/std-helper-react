@@ -16,6 +16,15 @@ export default class LoginViewModel{
         this.email = value
     }
 
+    checkPendingMails = async () => {
+        let res = ''
+        try {
+            res = await axios.get(this.baseUrl + 'scheduledjobs/')
+        } catch (e) {
+            print(e)
+        }
+    }
+
     login = async (event, navigate) => {
         let res = ''
         try {
