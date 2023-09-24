@@ -21,7 +21,7 @@ export default class LoginViewModel{
         try {
             res = await axios.get(this.baseUrl + 'scheduledjobs/')
         } catch (e) {
-            print(e)
+            console.log(e)
         }
     }
 
